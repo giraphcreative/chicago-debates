@@ -1,0 +1,80 @@
+
+
+.posts-container {
+    @include padding;
+    position: relative;
+
+    &:before {
+        content: "";
+        background: url(../img/bg-chicago-star-full.svg) center center no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 60%;
+        height: 140%;
+        top: -20%;
+        left: 30%;
+        z-index: 0;
+    }
+
+    h2 {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-bottom: 8px solid $yellow;
+            width: 200px;
+        }
+
+        @include respond-to( $bp-l ) {
+            font-size: 5em;
+            margin-bottom: 50px;
+
+            &:after {
+                bottom: -20px;
+            }
+        }
+    }
+
+    .posts-list {
+        position: relative;
+        z-index: 1;
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+            margin-right: -3%;
+        }
+
+        .entry {
+            margin-bottom: 20px;
+
+            @include respond-to( $bp-m ) {
+                flex: 1;
+                margin-right: 3%;
+            }
+
+            .wp-post-image {
+                border-radius: 30px;
+                margin-bottom: 15px;
+            }
+
+            h4 {
+                font-size: 1.1em;
+
+                a {
+                    color: black;
+
+                    &:hover {
+                        text-decoration: none;
+                        border-bottom: 2px dotted rgba( black, .4 );
+                    }
+                }
+            }
+        }
+    }
+}
+

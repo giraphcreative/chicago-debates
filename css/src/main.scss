@@ -1,0 +1,32 @@
+
+
+// set colors
+$teal: #50b6a6;
+$navy: #37354a;
+$yellow: #fdb913;
+$grey: #dbe3e1;
+
+
+// breakpoints
+$bp-s: 600px;
+$bp-m: 768px;
+$bp-l: 1024px;
+$bp-xl: 1150px;
+$bp-xxl: 1450px;
+
+
+// import all the things
+@import "mixins", "fonts", "reset", "button", "base", "grid", "form";
+
+
+// import layout components
+@import "header", "showcase", "content", "sidebar", "footer";
+
+
+// import components
+@import "component/hero", "component/bubbles", "component/quote", "component/events", "component/posts";
+
+
+// import lightbox styles
+@import "magnific";
+

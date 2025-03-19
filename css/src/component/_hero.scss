@@ -1,0 +1,130 @@
+
+
+.hero-container {
+    position: relative;
+
+    .hero-header {
+        background: $navy url(../img/bg-hero-speech-large.svg) top right no-repeat;
+        padding: 60px 5% 20px 5%;
+
+        &.speech {
+            background: $navy url(../img/bg-hero-speech-small.svg) top right no-repeat;
+        }
+
+        @include respond-to( $bp-s ) {
+            padding: 100px 40% 45px 5%;
+        }
+
+        @include respond-to( $bp-m ) {
+            padding: 100px 40% 45px 5%;
+        }
+
+        @include respond-to( $bp-l ) {
+            padding: 150px 40% 45px 5%;
+        }
+
+        @include respond-to( $bp-xl ) {
+            padding: 200px 40% 65px 5%;
+        }
+
+        h1 {
+            @include font-bold;
+            color: white;
+            font-size: 2.6em;
+            line-height: 1em;
+            text-transform: uppercase;
+        
+            span {
+                opacity: .7;
+            }
+                    
+            @include respond-to( $bp-m ) {
+                font-size: 3.8em;
+            }
+            
+            @include respond-to( $bp-l ) {
+                font-size: 5em;
+            }
+            
+            @include respond-to( $bp-xxl ) {
+                font-size: 6.5em;
+            }
+        }
+        
+        h2 {
+            font-size: 2em;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: white;
+        
+            @include respond-to( $bp-s ) {
+                font-size: 2.1em;
+            }
+            
+            @include respond-to( $bp-m ) {
+                font-size: 2.2em;
+            }
+            
+            @include respond-to( $bp-l ) {
+                font-size: 2.8em;
+            }
+            
+            @include respond-to( $bp-xxl ) {
+                font-size: 3.5em;
+            }
+        }
+        
+        h3 {
+            font-size: 1.6em;
+            line-height: 1em;
+            text-transform: uppercase;
+        
+            @include respond-to( $bp-m ) {
+                font-size: 1.8em;
+            }
+            
+            @include respond-to( $bp-l ) {
+                font-size: 2.2em;
+            }
+            
+            @include respond-to( $bp-xxl ) {
+                font-size: 3.5em;
+            }
+        }
+        
+        .stars {
+            background: url(../img/stars.svg) center center no-repeat;
+            aspect-ratio: 100 / 30;
+            max-width: 400px;
+        }
+    }
+
+    .hero-content {
+        @include padding;
+
+        @include respond-to( $bp-s ) {
+            padding: 30px 40% 30px 5%;
+        }
+
+        @include respond-to( $bp-m ) {
+            padding: 30px 40% 30px 5%;
+        }
+    }
+
+    .hero-cutout {
+        min-height: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+
+        @include respond-to( $bp-s ) {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 36%;
+        }
+    }
+
+}
+

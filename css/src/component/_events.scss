@@ -1,0 +1,141 @@
+
+
+.events-container {
+    background: $navy;
+    color: white;
+    @include padding;
+    position: relative;
+    z-index: 1;
+
+    @include respond-to( $bp-m ) {
+        display: flex;
+
+        .intro {
+            flex: 1 1 40%;
+            margin-right: 5%;
+        }
+
+        .events-list {
+            flex: 1 1 55%;
+        }
+    }
+
+    @include respond-to( $bp-l ) {
+        display: flex;
+
+        .intro {
+            flex: 1 1 45%;
+        }
+
+        .events-list {
+            flex: 1 1 50%;
+        }
+    }
+
+    .intro {
+        h2 {
+            font-size: 2.5em;
+            position: relative;
+            margin-bottom: 90px;
+
+            span {
+                display: block;
+                @include font-bold;
+            }
+
+            &:after {
+                background: url(../img/stars.svg) center center no-repeat;
+                aspect-ratio: 100 / 30;
+                position: absolute;
+                content: '';
+                bottom: -95px;
+                left: 0;
+                width: 300px;
+
+            }
+
+            @include respond-to( $bp-m ) {
+                font-size: 3em;
+            }
+
+            @include respond-to( $bp-l ) {
+                font-size: 4em;
+                margin-bottom: 120px;
+
+                &:after {
+                    bottom: -130px;
+                    width: 450px;
+                }
+            }
+        }
+
+        .more-events {
+            padding: 10px 0 30px;
+        }
+    }
+
+    .events-list {
+        @include respond-to( $bp-m ) {
+            display: flex;
+            flex-flow: column;
+        }
+
+        .event {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .date {
+                flex: 0 0 100px;
+                border: 2px solid $yellow;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                text-align: center;
+                margin-right: 5%;
+
+                .month {
+                    line-height: 24px;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    margin-top: 12px;
+                }
+
+                .day {
+                    font-size: 50px;
+                    line-height: 50px;
+                }
+
+                @include respond-to( $bp-m ) {
+                    padding: 10px;
+                    flex-basis: 130px;
+
+                    .month {
+                        line-height: 30px;
+                        font-size: 30px;
+                        margin-top: 15px;
+                    }
+
+                    .day {
+                        font-size: 50px;
+                        line-height: 50px;
+                    }
+                }
+            }
+
+            .event-name {
+                flex: 1;
+
+                a {
+                    color: white;
+
+                    &:hover {
+                        text-decoration: none;
+                        border-bottom: 2px dotted rgba( white, .4 );
+                    }
+                }
+            }
+        }
+    }
+}
+

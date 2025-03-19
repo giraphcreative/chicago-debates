@@ -1,0 +1,86 @@
+
+
+.quote-container {
+    background: url(../img/bg-chicago-star.svg) bottom left no-repeat;
+    background-size: contain;
+    position: relative;
+
+    .quote {
+        position: relative;
+        @include padding;
+        padding-top: 100px;
+
+        &:after {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            margin-left: -50px;
+            width: 100px;
+            height: 80px;
+            content: '';
+            background: url(../img/quote.svg) center center no-repeat;
+            backgroud-size: contain;
+        }
+
+        .attribution {
+            position: relative;
+            text-transform: uppercase;
+            font-size: 1.3em;
+
+            &:after {
+                position: absolute;
+                content: '';
+                bottom: -5px;
+                left: 0;
+                width: 100px;
+                border-top: 4px solid $yellow;
+            }
+        }
+    }
+
+    @include respond-to( $bp-m ) {
+        aspect-ratio: 7 / 4;
+
+        .photo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40%;
+        }
+
+        .quote {
+            margin-left: 44%;
+            padding-top: 150px;
+
+            &:after {
+                top: 40px;
+                width: 150px;
+                margin-left: -75px;
+            }
+        }
+    }
+
+    @include respond-to( $bp-l ) {
+        .quote {
+            margin-left: 45%;
+        }
+    }
+
+    @include respond-to( $bp-xl ) {
+        .quote {
+            margin-left: 48%;
+            margin-right: 5%;
+        }
+    }
+
+    @include respond-to( $bp-xxl ) {
+        .quote {
+            padding-top: 200px;
+
+            &:after {
+                top: 80px;
+            }
+        }
+    }
+}
+
