@@ -1,0 +1,45 @@
+
+
+.title {
+    @include padding;
+    background: $navy;
+    color: white;
+
+    h2 {
+        color: white;
+    }
+
+    .stars {
+        background-image: url(../img/stars-yellow.svg);
+    }
+
+    &.yellow {
+        background: $yellow;
+
+        .stars {
+            background-image: url(../img/stars-navy.svg);
+        }
+    }
+
+    &.teal {
+        background: $teal;
+
+        .stars {
+            background-image: url(../img/stars-navy.svg);
+        }
+
+        h2 {
+            color: $navy;
+        }
+    }
+
+    @include respond-to( $bp-m ) {
+        display: flex;
+        align-items: center;
+
+        .title-column {
+            flex: 1;
+        }
+    }
+}
+

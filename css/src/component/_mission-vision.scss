@@ -1,0 +1,87 @@
+
+
+.mission-vision {
+    position: relative;
+
+    .mission-vision-inner {
+
+        @include respond-to( $bp-m ) {
+            .mission, .vision {
+                padding-left: 30%;
+            }
+        }
+
+        .mission {
+
+            @include padding;
+
+            @include respond-to( $bp-m ) {
+                padding-left: 40%;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: -5%;
+                    width: 40%;
+                    height: 400px;
+                    background: url(../img/bg-bubble-white-half.svg) top center no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            @include respond-to( $bp-xl ) {
+                padding-left: 35%;
+            }
+    
+            &.teal {
+                background: $teal;
+                color: white;
+
+                .stars {
+                    background-image: url(../img/stars-yellow.svg);
+                }
+            }
+
+            
+        }
+
+        .vision {
+            @include padding;
+
+            @include respond-to( $bp-m ) {
+                padding-left: 40%;
+            }
+
+            @include respond-to( $bp-xl ) {
+                padding-left: 35%;
+            }
+        }
+    }
+    
+
+    .cutout {
+        margin-top: -100px;
+        position: relative;
+        aspect-ratio: 3 / 4;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        max-width: 400px;
+
+        @include respond-to( $bp-m ) {
+            position: absolute;
+            top: auto;
+            left: 0;
+            bottom: 0;
+            width: 35%;
+            height: 100%;
+            aspect-ratio: inherit;
+            background-position: bottom center;
+
+            margin-top: 0;
+            max-width: inherit;
+        }
+    }
+}
+

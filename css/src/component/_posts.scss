@@ -6,7 +6,7 @@
 
     &:before {
         content: "";
-        background: url(../img/bg-chicago-star-full.svg) center center no-repeat;
+        background: url(../img/bg-chicago-star-full-faded.svg) center center no-repeat;
         background-size: contain;
         position: absolute;
         width: 60%;
@@ -14,6 +14,23 @@
         top: -20%;
         left: 30%;
         z-index: 0;
+    }
+
+    &.navy {
+        background: $navy url(../img/bg-chicago-star-white-faded.svg) bottom center no-repeat;
+        background-size: contain;
+
+        &:before {
+            display: none;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .posts-list .entry h4 a {
+            color: white;
+        }
     }
 
     h2 {
@@ -31,7 +48,6 @@
         }
 
         @include respond-to( $bp-l ) {
-            font-size: 5em;
             margin-bottom: 50px;
 
             &:after {

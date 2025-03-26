@@ -11,6 +11,10 @@
             background: $navy url(../img/bg-hero-speech-small.svg) top right no-repeat;
         }
 
+        &.thought {
+            background: $navy url(../img/bg-hero-thought.svg) top right no-repeat;
+        }
+
         @include respond-to( $bp-s ) {
             padding: 100px 40% 45px 5%;
         }
@@ -91,12 +95,6 @@
                 font-size: 3.5em;
             }
         }
-        
-        .stars {
-            background: url(../img/stars.svg) center center no-repeat;
-            aspect-ratio: 100 / 30;
-            max-width: 400px;
-        }
     }
 
     .hero-content {
@@ -116,13 +114,16 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom right;
+        margin-top: -80px;
 
         @include respond-to( $bp-s ) {
+            background-position: bottom right;
             position: absolute;
             right: 0;
             bottom: 0;
             height: 100%;
             width: 36%;
+            margin-top: 0;
         }
     }
 

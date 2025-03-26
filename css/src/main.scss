@@ -20,11 +20,13 @@ $bp-xxl: 1450px;
 
 
 // import layout components
-@import "header", "showcase", "content", "sidebar", "footer";
+@import "header", "showcase", "content", "events", "sidebar", "footer";
 
 
 // import components
-@import "component/hero", "component/bubbles", "component/quote", "component/events", "component/posts";
+@import "component/hero", "component/bubbles", "component/quote", "component/events", "component/posts", 
+    "component/mission-vision", "component/content-cutout", "component/statistics", "component/report",
+    "component/title", "component/accordions";
 
 
 // import lightbox styles

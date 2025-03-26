@@ -4,7 +4,7 @@
     <style>
       .cls-1 {
         fill: #50b6a6;
-        opacity: 1;
+        opacity: .1;
       }
     </style>
   </defs>

@@ -22,6 +22,16 @@ header {
 		position: relative;
 		z-index: 2;
 		padding: 20px 5%;
+		margin-right: 50px;
+
+		@include respond-to( $bp-s ) {
+			max-width: 400px;
+		}
+
+		@include respond-to( $bp-menu ) {
+			margin-right: 0;
+			max-width: 100%;
+		}
 
 		@include respond-to( $bp-xl ) {
 			padding: 30px 5%;
@@ -80,6 +90,10 @@ header {
 			
 			@include respond-to( 400px ) {
 				right: 20px;
+			}
+
+			@include respond-to( $bp-s ) {
+				top: -75px;
 			}
 
 			@include respond-to( $bp-menu ) {
@@ -230,6 +244,57 @@ header {
 					}
 				}
 			}
+		}
+	}
+
+	.donate {
+		padding: 20px 3% 20px 70px;
+		background: $yellow;
+		color: white;
+		display: block;
+		position: relative;
+		text-transform: uppercase;
+		@include font-bold;
+		font-size: 20px;
+		line-height: 20px;
+		transition: opacity 400ms ease-in-out;
+
+		&:hover {
+			text-decoration: none;
+			opacity: .8;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			margin-top: -21px;
+			width: 30px;
+			height: 30px;
+			background: white url(../img/icon-donate.svg) center center no-repeat;
+			background-size: contain;
+			border-radius: 50%;
+			border: 6px solid white;
+		}
+
+		@include respond-to( $bp-s ) {
+			position: absolute;
+			top: 23px;
+			right: 80px;
+			border-radius: 30px;
+			z-index: 3;
+
+			&:before {
+				left: 9px;
+			}
+		}
+
+		@include respond-to( $bp-menu ) {
+			top: -3px;
+			right: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
 		}
 	}
 }

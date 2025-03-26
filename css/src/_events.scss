@@ -1,0 +1,33 @@
+
+
+.event-columns {
+    @include respond-to( $bp-m ) {
+        display: flex;
+        padding-top: 30px;
+
+        .event-description {
+            flex: 1 70%;
+            padding-right: 5%;
+        }
+
+        .event-information {
+            flex: 1 30%;
+        }
+    }
+
+    .event-information {
+        p {
+            font-size: 1.2em;
+            @include font-bold;
+
+            span {
+                @include font;
+                display: block;
+                text-transform: uppercase;
+                font-size: .85em;
+                opacity: .4;
+            }
+        }
+    }
+}
+

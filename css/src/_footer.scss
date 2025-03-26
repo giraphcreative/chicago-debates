@@ -1,88 +1,19 @@
 
+.skyline {
+	position: relative;
+	z-index: 1;
+	margin-top: 20px;
+}
 
 footer {
 	@include clearfix;
-	@include padding;
 	position: relative;
 	color: black;
 	line-height: 1.3em;
-
-	margin-top: 120px;
-
-	@include respond-to( 360px ) {
-		margin-top: 180px;
-	}
-
-	@include respond-to( 450px ) {
-		margin-top: 220px;
-	}
-
-	@include respond-to( $bp-s ) {
-		margin-top: 300px;
-	}
-
+	padding: 10% 6%;
+	
 	@include respond-to( $bp-m ) {
-		margin-top: 350px;
-	}
-
-	@include respond-to( $bp-l ) {
-		margin-top: 400px;
-	}
-
-	@include respond-to( $bp-xl ) {
-		margin-top: 500px;
-	}
-
-	@include respond-to( $bp-xxl ) {
-		margin-top: 600px;
-	}
-
-	&:before {
-		position: absolute;
-		background: url(../img/skyline.svg) bottom center no-repeat;
-		z-index: 1;
-		background-size: contain;
-		content: '';
-		top: -120px;
-		height: 120px;
-		width: 100%;
-		left: 0;
-		right: 0;
-
-		@include respond-to( 360px  ) {
-			height: 180px;
-			top: -180px;
-		}
-
-		@include respond-to( 450px  ) {
-			height: 220px;
-			top: -220px;
-		}
-
-		@include respond-to( $bp-s ) {
-			height: 300px;
-			top: -300px;
-		}
-
-		@include respond-to( $bp-m ) {
-			height: 350px;
-			top: -350px;
-		}
-
-		@include respond-to( $bp-l ) {
-			height: 400px;
-			top: -400px;
-		}
-
-		@include respond-to( $bp-xl ) {
-			height: 500px;
-			top: -500px;
-		}
-
-		@include respond-to( $bp-xxl ) {
-			height: 600px;
-			top: -600px;
-		}
+		padding: 3% 5%;
 	}
 
 	a {

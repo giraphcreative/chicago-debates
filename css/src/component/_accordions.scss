@@ -1,0 +1,111 @@
+
+
+.accordion {
+    position: relative;
+    z-index: 1;
+
+    .accordion-handle {
+        padding: 25px 6%;
+        background: $navy;
+        color: white;
+        cursor: pointer;
+
+        @include respond-to( $bp-m ) {
+            padding: 30px 5%;
+        }
+
+        h3 {
+            font-size: 1.5em;
+
+            @include respond-to( $bp-m ) {
+                font-size: 1.7em;
+            }
+        }
+
+        &.navy-light {
+            background: rgba( $navy, .8);
+        }
+
+        &.navy-lighter {
+            background: rgba( $navy, .6);
+        }
+
+        &.navy-lightest {
+            background: rgba( $navy, .4);
+            color: $navy;
+        }
+
+        &.teal {
+            background: $teal;
+        }
+
+        &.teal-light {
+            background: rgba( $teal, .8);
+        }
+
+        &.teal-lighter {
+            background: rgba( $teal, .6);
+            color: $navy;
+        }
+
+        &.yellow {
+            background: $yellow;
+            color: $navy;
+        }
+
+        &.yellow-light {
+            background: rgba( $yellow, .8 );
+            color: $navy;
+        }
+    }
+
+    .accordion-content {
+        display: none;
+        position: relative;
+        background: url(../img/bg-chicago-star-partial-faded.svg) top right no-repeat;
+        background-size: contain;
+
+        .accordion-content-inner {
+            padding: 3% 6%;
+
+            @include respond-to( $bp-m ) {
+                padding: 3% 5%;
+            }
+        }
+
+        .accordion-cutout {
+            aspect-ratio: 3 / 4;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            max-width: 400px;
+            margin: -80px 0 0 auto;
+        }
+    }
+
+    &.open {
+        .accordion-content {
+            display: block;
+
+            &.has-cutout {
+                @include respond-to( $bp-m ) {
+                    display: flex;
+
+                    .accordion-content-inner {
+                        flex: 0 0 65%;
+                        padding-right: 0;
+                    }
+
+                    .accordion-cutout {
+                        flex: 0 0 35%;
+                        aspect-ratio: inherit;
+                        max-width: inherit;
+                        margin: 0;
+                        background-position: bottom center;
+                    }
+                }
+            }
+        }
+    }
+}
+

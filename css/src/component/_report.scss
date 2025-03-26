@@ -1,0 +1,67 @@
+
+
+.report {
+    position: relative;
+    z-index: 1;
+    background: $navy;
+    color: white;
+    @include padding;
+
+    h2, h3, h4, h5, h6 {
+        color: white;
+    }
+
+    @include respond-to( $bp-m ) {
+        display: flex;
+    }
+    
+    .intro {
+        @include respond-to( $bp-m ) {
+            flex: 1 55%;
+            margin-right: 5%;
+
+            h2 {
+                width: 60%;
+            }
+        }
+    }
+
+    .image {
+        padding: 30px 0;
+        position: relative;
+        text-align: center;
+
+        @include respond-to( $bp-m ) {
+            flex: 1 40%;
+        }
+
+        &:before {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            content: '';
+            background: url(../img/bg-bubble-yellow-boxy.svg) center center no-repeat;
+            background-size: contain;
+
+            @include respond-to( $bp-m ) {
+                top: -8%;
+                right: -8%;
+                bottom: -8%;
+                left: -8%;    
+            }
+        }
+
+        img {
+            position: relative;
+            transform: rotate(10deg);
+            box-shadow: 15px 15px 30px rgba( black, .4 );
+            
+            @include respond-to( $bp-m ) {
+                max-width: 350px;
+            }
+        }
+    }
+}
+

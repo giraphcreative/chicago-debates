@@ -34,6 +34,8 @@
 		<button class="menu-toggle">Show/hide Menu</button>
 		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
 	</nav>
+
+	<a href="/donate" class="donate">Donate</a>
 	
 </header>
 
