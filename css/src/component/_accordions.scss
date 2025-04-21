@@ -9,6 +9,21 @@
         background: $navy;
         color: white;
         cursor: pointer;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            margin-top: -15px;
+            background: url(../img/arrow.svg) center center no-repeat;
+            background-size: contain;
+            height: 30px;
+            width: 30px;
+            transform: rotate( 0deg );
+            transition: transform 200ms ease-in-out;
+        }
 
         @include respond-to( $bp-m ) {
             padding: 30px 5%;
@@ -84,6 +99,10 @@
     }
 
     &.open {
+        .accordion-handle:after {
+            transform: rotate( 180deg );
+        }
+
         .accordion-content {
             display: block;
 
@@ -109,3 +128,14 @@
     }
 }
 
+
+
+.content-one, .content-two {
+    .accordion-container {
+        padding: 12px 0;
+    }
+
+    .accordion .accordion-content {
+        background: $grey;
+    }
+}

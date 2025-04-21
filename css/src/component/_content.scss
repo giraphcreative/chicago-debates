@@ -1,0 +1,159 @@
+
+
+.content-area {
+    padding: 12px 0;
+}
+
+
+.content-one {
+    @extend .content-style;
+    @include padding;
+    background: white;
+    color: black;
+
+    &.pad-none { 
+        padding: 0 !important;
+    }
+
+    &.pad-no-bottom { 
+        @include padding-no-bottom;
+    }
+
+    &.pad-no-top { 
+        @include padding-no-top;
+    }
+
+    &.pad-side {
+        @include padding-side;
+    }
+
+    &.grey {
+        background: $grey;
+    }
+
+    &.narrow {
+        .content-one-inner {
+            max-width: $bp-l;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+.content-two-container {
+    background: white;
+    color: black;
+    @include padding;
+
+    &.pad-none { 
+        padding: 0 !important;
+    }
+
+    &.pad-side {
+        @include padding-side;
+    }
+
+    &.pad-no-bottom { 
+        @include padding-no-bottom;
+    }
+
+    &.pad-no-top { 
+        @include padding-no-top;
+    }
+
+    &.grey {
+        background: $grey;
+    }
+
+    .content-two {
+        @extend .content-style;
+
+        &.vcenter {
+            align-items: center;
+        }
+
+        .column {
+            padding: 15px 0;
+
+            @include respond-to( $bp-m ) {
+                padding: 0;
+            }
+        }
+
+        &.border {
+            .column {
+                border: 1px solid rgba( black, .4 );
+                border-radius: 6px;
+                padding: 25px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+
+            .column {
+                flex: 1;
+            }
+
+            &.reverse {
+                flex-direction: row-reverse;
+
+                &.equal .column.one {
+                    margin-right: 0;
+                    margin-left: 10%;
+                }
+            }
+
+            &.equal {
+                .column.one {
+                    margin-right: 9%;
+                }
+            }
+
+            &.narrow {
+                max-width: 1220px;
+                margin: 0 auto;
+            }
+
+            &.right {
+                .column {
+                    &:first-child {
+                        flex-basis: 28%;
+                        margin-right: 9%;
+                    }
+
+                    &:nth-child(2) {
+                        flex-basis: 62%;
+                    }
+                }
+            }
+
+            &.left {
+                .column {
+                    &:first-child {
+                        flex-basis: 62%;
+                        margin-right: 9%;
+                    }
+
+                    &:nth-child(2) {
+                        flex-basis: 28%;
+                    }
+                }
+            }
+
+            &.border {
+                .column {
+                    &:first-child {
+                        margin-right: 5%;
+                    }
+
+                    @include respond-to( $bp-l ) {
+                        padding: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
