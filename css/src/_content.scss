@@ -118,6 +118,27 @@
 }
 
 
+.content-two-container {
+	@include padding;
+	
+	.content-two {
+		@include respond-to( $bp-m ) {
+			display: flex;
+			margin-right: -5%;
+		}
+
+		.column {
+			flex: 1 1 45%;
+			margin-right: 5%;
+
+			&.one {
+				
+			}
+		}
+	}
+}
+
+
 .stars {
 	background: url(../img/stars.svg) center center no-repeat;
 	aspect-ratio: 100 / 30;

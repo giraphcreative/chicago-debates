@@ -10,6 +10,9 @@ if ( function_exists( 'add_theme_support' ) ) {
 	// set the default thumbnail size
 	set_post_thumbnail_size( 500, 500, true );
 
+    // bubble size
+    add_image_size( 'bubble', 600, 800, true ); 
+    
 }
 
 

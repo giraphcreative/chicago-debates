@@ -16,7 +16,7 @@
 <![endif]-->
 
 <?php wp_head(); ?>
-<link href="<?php bloginfo( "template_url" ) ?>/css/main.css" rel="stylesheet" type="text/css">
+<link href="<?php bloginfo( "template_url" ) ?>/css/main.css?v=1" rel="stylesheet" type="text/css">
 
 </head>
 <body <?php body_class(); ?>>
@@ -24,10 +24,7 @@
 <header>
 	
 	<div class="logo">
-		<a href="/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		<img src="<?php bloginfo( "template_url" ) ?>/img/logo-horizontal.svg" alt="<?php bloginfo( 'name' ); ?>" class="mobile">
-		<img src="<?php bloginfo( "template_url" ) ?>/img/logo-vertical.svg" alt="<?php bloginfo( 'name' ); ?>" class="desktop">
-		</a>
+		<a href="/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php bloginfo( "template_url" ) ?>/img/logo-horizontal.svg" alt="<?php bloginfo( 'name' ); ?>"></a>
 	</div>
 
 	<nav>
@@ -35,7 +32,7 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
 	</nav>
 
-	<a href="/donate" class="donate">Donate</a>
+	<div class="donate-button"><a href="/donate" class="donate">Donate</a></div>
 	
 </header>
 

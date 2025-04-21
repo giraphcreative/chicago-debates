@@ -1,0 +1,76 @@
+
+
+.bubble-content {
+    @include padding;
+
+    .bubble {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 232 / 215;
+        mask: url(../img/mask-bubble-rect-down.svg);
+
+        @include respond-to( $bp-m ) {
+            &.rounded {
+                aspect-ratio: 215 / 232;
+                mask: url(../img/mask-bubble-rect-left.svg);
+
+                &.right {
+                    mask: url(../img/mask-bubble-rect-right.svg);
+                }
+            }
+
+            &.circular {
+                aspect-ratio: 246 / 226;
+                mask: url(../img/mask-bubble-circ-left.svg);
+
+                &.right {
+                    mask: url(../img/mask-bubble-circ-right.svg);
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 20px 0;
+    }
+
+    @include respond-to( $bp-m ) {
+        display: flex;
+        align-items: start;
+
+        &.left {
+            flex-direction: row-reverse;
+        }
+
+        .bubble, .content {
+            flex: 1;
+        }
+
+        .bubble {
+            flex-basis: 35%;
+        }
+
+        .content {
+            padding: 0 0 0 30px;
+            flex-basis: 65%;
+        }
+
+        &.left .content {
+            padding: 0 30px 0 0;
+        }
+    }
+
+    @include respond-to( $bp-l ) {
+        align-items: center;
+
+        .bubble {
+            flex-basis: 45%;
+        }
+
+        .content {
+            flex-basis: 55%;
+        }
+    }
+}
+

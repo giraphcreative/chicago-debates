@@ -1,0 +1,67 @@
+
+
+.people-container {
+    @include padding;
+
+    .people-listing {
+        @include respond-to( $bp-m ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -4%;
+
+            .person-entry {
+                flex: 0 0 46%;
+                margin-right: 4%;
+            }
+        }
+    }
+}
+
+
+.person-entry {
+    .person-photo {
+        padding: 0 30px;
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .person-info {
+        background: $navy;
+        position: relative;
+        border-radius: 30px;
+        padding: 25px 30px;
+        color: white;
+
+        &:before {
+            content: '';
+            background: url(../img/carat.svg) bottom right no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: -30px;
+            height: 30px;
+            width: 100px;
+            right: 50px;
+            transform: rotate( 180deg );
+        }
+
+        h4 {
+            @include font-bold;
+            font-size: 1.4em;
+            padding: 0;
+        }
+
+        .person-title {
+            font-size: .85em;
+            text-transform: uppercase;
+            padding: 0;
+            opacity: .6;
+        }
+
+        .bio {
+            font-size: .85em;
+        }
+    }
+}

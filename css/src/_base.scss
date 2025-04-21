@@ -32,7 +32,7 @@ h1 {
 	text-transform: uppercase;
 
 	span {
-		opacity: .7;
+		opacity: .5;
 	}
             
 	@include respond-to( $bp-m ) {
@@ -45,6 +45,10 @@ h2 {
 	font-size: 3em;
 	line-height: 1em;
 	color: $navy;
+
+	span {
+		opacity: .5;
+	}
 
 	@include respond-to( $bp-l ) {
 		font-size: 3.5em;

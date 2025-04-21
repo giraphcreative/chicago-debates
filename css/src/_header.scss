@@ -1,71 +1,45 @@
 
 
-$bp-menu: 880px;
+$bp-menu: $bp-l;
 
 header {
 	position: relative;
 	border-bottom: 35px solid $teal;
+	padding: 0;
 
 	@include respond-to( $bp-menu ) {
-		height: 195px;
-	}
+		display: flex;
+		align-items: center;
+		padding: 25px 0 15px 20px;
 
-	@include respond-to( $bp-l ) {
-		height: 220px;
-	}
+		.logo {
+			flex: 0 0 25%;
+		}
 
-	@include respond-to( $bp-xl ) {
-		height: 265px;
+		nav {
+			flex: 1 60%;
+		}
+
+		.donate-button {
+			flex: 1 15%;
+			padding-right: 20px;
+			text-align: right;
+		}
 	}
 
 	.logo {
-		position: relative;
-		z-index: 2;
-		padding: 20px 5%;
-		margin-right: 50px;
-
-		@include respond-to( $bp-s ) {
-			max-width: 400px;
-		}
+		padding: 15px 0;
 
 		@include respond-to( $bp-menu ) {
-			margin-right: 0;
-			max-width: 100%;
-		}
-
-		@include respond-to( $bp-xl ) {
-			padding: 30px 5%;
+			padding: 0;
 		}
 
 		img {
-			&.mobile {
-				max-width: 250px;
+			width: 90%;
+			max-width: 350px;
 
-				@include respond-to( $bp-menu ) {
-					display: none;
-				}
-			}
-
-			&.desktop {
-				display: none;
-
-				@include respond-to( $bp-menu ) {
-					display: block;
-					max-width: 120px;
-					position: absolute;
-					left: 50%;
-					margin-left: -60px;
-				}
-
-				@include respond-to( $bp-l ) {
-					max-width: 140px;
-					margin-left: -80px;
-				}
-
-				@include respond-to( $bp-xl ) {
-					max-width: 160px;
-					margin-left: -80px;
-				}
+			@include respond-to( $bp-menu ) {
+				max-width: 100%;
 			}
 		}
 	}
@@ -77,7 +51,7 @@ header {
 		button {
 			position: absolute;
 			right: 10px;
-			top: -60px;
+			top: -75px;
 			width: 40px;
 			height: 40px;
 			border: 0;
@@ -90,10 +64,7 @@ header {
 			
 			@include respond-to( 400px ) {
 				right: 20px;
-			}
-
-			@include respond-to( $bp-s ) {
-				top: -75px;
+				top: -80px;
 			}
 
 			@include respond-to( $bp-menu ) {
@@ -104,59 +75,20 @@ header {
 		.nav-menu {
 			display: none;
 			background: $navy;
-			position: relative;
-			z-index: 1;
 						
 			@include respond-to( $bp-menu ) {
 				display: block;
-				@include clearfix;
 				background: transparent;
-				text-align: center;
-				padding: 20px 0;
 			}
 
 			@include respond-to( $bp-l ) {
-				padding: 30px 0 20px;
-			}
-
-			@include respond-to( $bp-xl ) {
-				padding: 40px 0 20px;
+				text-align: center;
 			}
 
 			li {
 				@include respond-to( $bp-menu ) {
-					box-shadow: none;
 					position: relative;
 					display: inline-block;
-					width: 150px;
-
-					&:nth-child(3) {
-						margin-left: 150px;
-					}
-				}
-
-				@include respond-to( $bp-l ) {
-					width: 180px;
-
-					&:nth-child(3) {
-						margin-left: 180px;
-					}
-				}
-
-				@include respond-to( $bp-xl ) {
-					width: 200px;
-
-					&:nth-child(3) {
-						margin-left: 20%;
-					}
-				}
-
-				@include respond-to( $bp-xxl ) {
-					width: 230px;
-
-					&:nth-child(3) {
-						margin-left: 22%;
-					}
 				}
 
 				a {
@@ -168,8 +100,7 @@ header {
 					color: white;
 					text-decoration: none;
 					text-transform: uppercase;
-					width: 100%;
-					transition: 400ms background-color ease-in-out;
+					transition: 200ms background-color ease-in-out;
 					background-color: transparent;
 					text-align: center;
 
@@ -179,22 +110,20 @@ header {
 						color: $navy;
 					}
 
-					@include respond-to( $bp-l ) {
-						font-size: 18px;
+					@include respond-to( $bp-xl ) {
+						font-size: 17px;
+						padding: 15px;
 					}
 
-					@include respond-to( $bp-xl ) {
-						font-size: 20px;
-					}
-
-					@include respond-to( $bp-xl ) {
-						font-size: 22px;
+					@include respond-to( $bp-xxl ) {
+						font-size: 21px;
+						padding: 15px 20px;
 					}
 				}
 
 				&:hover, &.open {
 					a {
-						background-color: rgba( white, .2 );
+						background-color: darken( $grey, 10% );
 					}
 
 					ul.sub-menu {
@@ -207,21 +136,19 @@ header {
 				ul.sub-menu {
 					display: none;
 					margin-bottom: 3px;
-					box-shadow: 0 20px 20px $grey;
-					opacity: .9;
+					box-shadow: 5px 5px 20px rgba( black, .2 );
 
 					@include respond-to( $bp-menu ) {
 						position: absolute;
 						left: 0;
 						top: 54px;
-						width: 100%;
-						background-color: $grey;
+						min-width: 100%;
+						background-color: darken( $grey, 10% );
 						@include clearfix;
 					}
 
 					li {
 						display: block;
-						width: 100%;
 
 						a {
 							font-size: 15px;
@@ -231,14 +158,20 @@ header {
 
 							@include respond-to( $bp-menu ) {
 								padding: 10px;
+								font-size: 16px;
 
 								&:hover {
-									background-color: $grey;
+									background-color: darken( $grey, 5% );
 								}
 							}
 
-							@include respond-to( $bp-l ) {
+							@include respond-to( $bp-xl ) {
 								padding: 10px 15px;
+								text-align: left;
+							}
+				
+							@include respond-to( $bp-xxl ) {
+								padding: 10px 20px;
 							}
 						}
 					}
@@ -248,7 +181,7 @@ header {
 	}
 
 	.donate {
-		padding: 20px 3% 20px 70px;
+		padding: 15px 3% 15px 70px;
 		background: $yellow;
 		color: white;
 		display: block;
@@ -269,21 +202,22 @@ header {
 			position: absolute;
 			left: 20px;
 			top: 50%;
-			margin-top: -21px;
-			width: 30px;
-			height: 30px;
+			margin-top: -14px;
+			width: 20px;
+			height: 20px;
 			background: white url(../img/icon-donate.svg) center center no-repeat;
 			background-size: contain;
 			border-radius: 50%;
-			border: 6px solid white;
+			border: 4px solid white;
 		}
 
-		@include respond-to( $bp-s ) {
+		@include respond-to( $bp-m ) {
 			position: absolute;
-			top: 23px;
+			top: 40px;
 			right: 80px;
 			border-radius: 30px;
 			z-index: 3;
+			padding: 15px 3% 15px 50px;
 
 			&:before {
 				left: 9px;
@@ -291,10 +225,11 @@ header {
 		}
 
 		@include respond-to( $bp-menu ) {
-			top: -3px;
-			right: 0;
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
+			position: relative;
+			top: auto;
+			right: auto;
+			padding: 15px 15px 15px 50px;
+			display: inline-block;
 		}
 	}
 }

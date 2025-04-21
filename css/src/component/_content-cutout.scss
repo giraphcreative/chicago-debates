@@ -10,7 +10,6 @@
         left: 0;
 
         content: "";
-        background: url(../img/bg-chicago-star-full.svg) center center no-repeat;
         background-size: contain;
         aspect-ratio: 1 / 1;
         width: 100%;
@@ -29,6 +28,22 @@
         @include respond-to( $bp-l ) {
             max-width: 40%;
         }
+    }
+    
+    &.star-teal:before {
+        background: url(../img/bg-chicago-star-full.svg) center center no-repeat;
+    }
+    
+    &.star-yellow:before {
+        background: url(../img/bg-chicago-star-full-yellow.svg) center center no-repeat;
+    }
+    
+    &.bubble-teal:before {
+        background: url(../img/bg-bubble-teal.svg) center center no-repeat;
+    }
+    
+    &.bubble-yellow:before {
+        background: url(../img/bg-bubble-yellow.svg) center center no-repeat;
     }
 
     &.grey {

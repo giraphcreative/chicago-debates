@@ -41,7 +41,12 @@ footer {
 			flex: 1;
 
 			&:first-child {
-				flex: 0 0 50%;
+				flex: 0 0 40%;
+			}
+
+			&.social {
+				flex: 0 0 8%;
+				padding: 0 1%;
 			}
 		}
 	}
@@ -65,6 +70,24 @@ footer {
 
 			iframe {
 				display: block;
+			}
+		}
+
+		&.social {
+			text-align: center;
+
+			a {
+				border: 0;
+				opacity: .7;
+				margin: 0 3px;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			img {
+				max-width: 50px;
 			}
 		}
 	}
