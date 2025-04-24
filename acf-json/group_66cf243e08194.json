@@ -35,6 +35,7 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -55,6 +56,7 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -76,6 +78,29 @@
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68084450ae944",
+            "label": "Sort",
+            "name": "sort",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -235,5 +260,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1745175675
+    "modified": 1745372512
 }

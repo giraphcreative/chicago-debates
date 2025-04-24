@@ -1,75 +1,82 @@
 
+.bubble-content-container {
 
-.bubble-content {
-    @include padding;
+    &.grey {
+        background: $grey;
+    }
 
-    .bubble {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        aspect-ratio: 232 / 215;
-        mask: url(../img/mask-bubble-rect-down.svg);
+    .bubble-content {
+        @include padding;
+
+        .bubble {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: white;
+            aspect-ratio: 232 / 215;
+            mask: url(../img/mask-bubble-rect-down.svg);
+
+            @include respond-to( $bp-m ) {
+                &.rounded {
+                    aspect-ratio: 215 / 232;
+                    mask: url(../img/mask-bubble-rect-left.svg) no-repeat;
+
+                    &.right {
+                        mask: url(../img/mask-bubble-rect-right.svg) no-repeat;
+                    }
+                }
+
+                &.circular {
+                    aspect-ratio: 246 / 226;
+                    mask: url(../img/mask-bubble-circ-left.svg) no-repeat;
+
+                    &.right {
+                        mask: url(../img/mask-bubble-circ-right.svg) no-repeat;
+                    }
+                }
+            }
+        }
+
+        .content {
+            padding: 20px 0;
+        }
 
         @include respond-to( $bp-m ) {
-            &.rounded {
-                aspect-ratio: 215 / 232;
-                mask: url(../img/mask-bubble-rect-left.svg);
+            display: flex;
+            align-items: start;
 
-                &.right {
-                    mask: url(../img/mask-bubble-rect-right.svg);
-                }
+            &.left {
+                flex-direction: row-reverse;
             }
 
-            &.circular {
-                aspect-ratio: 246 / 226;
-                mask: url(../img/mask-bubble-circ-left.svg);
+            .bubble, .content {
+                flex: 1;
+            }
 
-                &.right {
-                    mask: url(../img/mask-bubble-circ-right.svg);
-                }
+            .bubble {
+                flex-basis: 35%;
+            }
+
+            .content {
+                padding: 0 0 0 30px;
+                flex-basis: 65%;
+            }
+
+            &.left .content {
+                padding: 0 30px 0 0;
             }
         }
-    }
 
-    .content {
-        padding: 20px 0;
-    }
+        @include respond-to( $bp-l ) {
+            align-items: center;
 
-    @include respond-to( $bp-m ) {
-        display: flex;
-        align-items: start;
+            .bubble {
+                flex-basis: 45%;
+            }
 
-        &.left {
-            flex-direction: row-reverse;
-        }
-
-        .bubble, .content {
-            flex: 1;
-        }
-
-        .bubble {
-            flex-basis: 35%;
-        }
-
-        .content {
-            padding: 0 0 0 30px;
-            flex-basis: 65%;
-        }
-
-        &.left .content {
-            padding: 0 30px 0 0;
-        }
-    }
-
-    @include respond-to( $bp-l ) {
-        align-items: center;
-
-        .bubble {
-            flex-basis: 45%;
-        }
-
-        .content {
-            flex-basis: 55%;
+            .content {
+                flex-basis: 55%;
+            }
         }
     }
 }

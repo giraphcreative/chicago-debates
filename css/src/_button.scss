@@ -43,5 +43,12 @@
 		background-color: $yellow;
 		color: $navy;
 	}
+
+	&.block {
+		display: block;
+		padding: 15px;
+		margin-bottom: 5px;
+		border-radius: 30px;
+	}
 }
 

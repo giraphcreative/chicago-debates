@@ -2,6 +2,7 @@
 
 .hero-container {
     position: relative;
+    z-index: 1;
 
     .hero-header {
         background: $navy url(../img/bg-hero-speech-large.svg) top right no-repeat;
@@ -9,9 +10,10 @@
 
         &.speech {
             background: $navy url(../img/bg-hero-speech-small.svg) top right no-repeat;
-        }
+       }
 
         &.thought {
+            opacity: .4;
             background: $navy url(../img/bg-hero-thought.svg) top right no-repeat;
         }
 
@@ -37,11 +39,11 @@
             font-size: 2.6em;
             line-height: 1em;
             text-transform: uppercase;
-        
+
             span {
                 opacity: .7;
             }
-                    
+            
             @include respond-to( $bp-m ) {
                 font-size: 3.8em;
             }

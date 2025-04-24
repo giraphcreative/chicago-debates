@@ -12,7 +12,7 @@ if ( have_posts() ) :
     ?>
 <div class="title <?php print $color ?>">
     <div class="title-column">
-        <h1><span>Bio:</span> <?php the_title(); ?></h1>
+        <h1><?php the_title(); ?></h1>
     </div>
 </div>
 <div class="content-two-container">

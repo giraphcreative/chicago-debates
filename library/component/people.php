@@ -2,6 +2,13 @@
 
 $group = get_sub_field( 'group' );
 $color = get_sub_field( 'color' );
+$sort = get_sub_field( 'sort' );
+
+if ( $sort == 'sort' ) :
+    $order_meta = 'sort';
+else:
+    $order_meta = '_p_person_lname';
+endif;
 
 // if the people category
 if ( !empty( $group ) ) :
@@ -11,7 +18,7 @@ if ( !empty( $group ) ) :
         "posts_per_page" => 200,
         "post_type" => 'people',
         "orderby" => 'meta_value',
-        "meta_key" => '_p_person_lname',
+        "meta_key" => $order_meta,
         "order" => 'ASC',
         "tax_query" => array(
             array (

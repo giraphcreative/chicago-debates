@@ -10,7 +10,7 @@ $cutout = get_sub_field( 'cutout' );
 <div class="hero-container">
     <div class="hero-header <?php print $theme ?>">
         <?php if ( !empty( $supertitle ) ) : ?><h2><?php print $supertitle ?></h2><?php endif; ?>
-        <h1><?php print $title ?></h1>
+        <h1><?php print str_replace( '|', '<br>', $title ) ?></h1>
         <div class="stars"></div>
     </div>
     <div class="hero-content">

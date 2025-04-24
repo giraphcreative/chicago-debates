@@ -2,8 +2,13 @@
 
 $bp-menu: $bp-l;
 
+$bg-menu: darken( $navy, 5% );
+$bg-submenu: darken( $bg-menu, 5% );
+$bg-subsubmenu-hover: darken( $bg-submenu, 5% );
+
 header {
 	position: relative;
+	z-index: 2;
 	border-bottom: 35px solid $teal;
 	padding: 0;
 
@@ -74,7 +79,7 @@ header {
 
 		.nav-menu {
 			display: none;
-			background: $navy;
+			background: $bg-menu;
 						
 			@include respond-to( $bp-menu ) {
 				display: block;
@@ -100,12 +105,12 @@ header {
 					color: white;
 					text-decoration: none;
 					text-transform: uppercase;
-					transition: 200ms background-color ease-in-out;
-					background-color: transparent;
+					background-color: $bg-menu;
 					text-align: center;
 
 					@include respond-to( $bp-menu ) {
 						display: inline-block;
+						background-color: white;
 						padding: 15px 10px;
 						color: $navy;
 					}
@@ -122,8 +127,13 @@ header {
 				}
 
 				&:hover, &.open {
-					a {
-						background-color: darken( $grey, 10% );
+					& > a {
+						background-color: $bg-submenu;
+						color: white;
+
+						@include respond-to( $bp-menu ) {
+							background-color: $bg-menu;
+						}
 					}
 
 					ul.sub-menu {
@@ -135,7 +145,6 @@ header {
 
 				ul.sub-menu {
 					display: none;
-					margin-bottom: 3px;
 					box-shadow: 5px 5px 20px rgba( black, .2 );
 
 					@include respond-to( $bp-menu ) {
@@ -143,26 +152,25 @@ header {
 						left: 0;
 						top: 54px;
 						min-width: 100%;
-						background-color: darken( $grey, 10% );
-						@include clearfix;
 					}
 
 					li {
 						display: block;
+						position: relative;
 
 						a {
 							font-size: 15px;
 							line-height: 18px;
 							display: block;
 							padding: 10px 5px;
+							white-space: nowrap;
+							background-color: $bg-submenu;
+							color: white;
 
 							@include respond-to( $bp-menu ) {
 								padding: 10px;
 								font-size: 16px;
-
-								&:hover {
-									background-color: darken( $grey, 5% );
-								}
+								background-color: $bg-menu;
 							}
 
 							@include respond-to( $bp-xl ) {
@@ -172,6 +180,68 @@ header {
 				
 							@include respond-to( $bp-xxl ) {
 								padding: 10px 20px;
+							}
+						}
+
+						&:hover, &.open {
+							& > a {
+								background-color: $bg-subsubmenu-hover;
+								color: white;
+
+								@include respond-to( $bp-menu ) {
+									background-color: $bg-submenu;
+								}
+							}
+		
+							ul.sub-menu {
+								@include respond-to( $bp-menu ) {
+									display: block;
+								}
+							}
+						}
+		
+						ul.sub-menu {
+							display: none;
+							box-shadow: 5px 5px 20px rgba( black, .2 );
+							background-color: $bg-submenu;
+
+							@include respond-to( $bp-menu ) {
+								position: absolute;
+								left: 100%;
+								top: 0;
+								min-width: 100%;
+							}
+		
+							li {
+								display: block;
+		
+								a {
+									font-size: 15px;
+									line-height: 18px;
+									display: block;
+									padding: 10px 5px;
+									white-space: nowrap;
+									background-color: $bg-subsubmenu-hover;
+		
+									@include respond-to( $bp-menu ) {
+										padding: 10px;
+										font-size: 16px;
+										background-color: $bg-submenu;
+		
+										&:hover {
+											background-color: $bg-subsubmenu-hover;
+										}
+									}
+		
+									@include respond-to( $bp-xl ) {
+										padding: 10px 15px;
+										text-align: left;
+									}
+						
+									@include respond-to( $bp-xxl ) {
+										padding: 10px 20px;
+									}
+								}
 							}
 						}
 					}

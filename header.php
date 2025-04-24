@@ -16,7 +16,7 @@
 <![endif]-->
 
 <?php wp_head(); ?>
-<link href="<?php bloginfo( "template_url" ) ?>/css/main.css?v=1" rel="stylesheet" type="text/css">
+<link href="<?php bloginfo( "template_url" ) ?>/css/main.css?v=4" rel="stylesheet" type="text/css">
 
 </head>
 <body <?php body_class(); ?>>
@@ -32,7 +32,9 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
 	</nav>
 
-	<div class="donate-button"><a href="/donate" class="donate">Donate</a></div>
+	<?php
+	$donate_link = get_field( 'donate', 'option' );
+	if ( !empty( $donate_link ) ) : ?><div class="donate-button"><a href="<?php print $donate_link ?>" class="donate">Donate</a></div><?php endif; ?>
 	
 </header>
 

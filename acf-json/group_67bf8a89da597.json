@@ -102,6 +102,27 @@
                     "parent_repeater": "field_6805431223409"
                 }
             ]
+        },
+        {
+            "key": "field_680a3be78e547",
+            "label": "Donate Link",
+            "name": "donate",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -129,5 +150,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1745176592
+    "modified": 1745501170
 }

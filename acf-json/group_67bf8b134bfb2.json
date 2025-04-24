@@ -842,7 +842,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "75",
                                 "class": "",
                                 "id": ""
                             },
@@ -852,6 +852,27 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_6807d398c4471",
+                            "label": "Show Stars",
+                            "name": "stars",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
                         },
                         {
                             "key": "field_67dc8b6743821",
@@ -1071,7 +1092,7 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 0,
+                            "default_value": 1,
                             "allow_in_bindings": 0,
                             "ui_on_text": "",
                             "ui_off_text": "",
@@ -1122,7 +1143,7 @@
                             "name": "image",
                             "aria-label": "",
                             "type": "image",
-                            "instructions": "",
+                            "instructions": "Non-cutout images work best in this component, because it automatically masks so it's the shape you select below.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1183,7 +1204,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -1192,6 +1213,35 @@
                                 "rounded": "Rounded Rectangle"
                             },
                             "default_value": "rounded",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_6807d3cbe49a2",
+                            "label": "Background Color",
+                            "name": "color",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "grey": "Grey",
+                                "white": "White"
+                            },
+                            "default_value": "white",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -1637,7 +1687,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -1646,6 +1696,35 @@
                                 "grey": "Grey"
                             },
                             "default_value": "white",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": ""
+                        },
+                        {
+                            "key": "field_68084f0528fff",
+                            "label": "Sort By",
+                            "name": "sort",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "sort": "Sort Field",
+                                "lname": "Last Name"
+                            },
+                            "default_value": "lname",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -2439,5 +2518,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1745262633
+    "modified": 1745384198
 }
