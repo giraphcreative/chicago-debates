@@ -5,16 +5,22 @@
     z-index: 1;
 
     .accordion-handle {
-        padding: 25px 6%;
+        padding: 25px 12% 25px 6%;
         background: $navy;
+        border-bottom: 1px solid rgba( white, .1 );
         color: white;
         cursor: pointer;
         position: relative;
+        transition: opacity 400ms ease-in-out;
+
+        &:hover {
+            opacity: .9;
+        }
 
         &:after {
             content: '';
             position: absolute;
-            right: 25px;
+            right: 4%;
             top: 50%;
             margin-top: -15px;
             background: url(../img/arrow.svg) center center no-repeat;
@@ -31,10 +37,8 @@
 
         h3 {
             font-size: 1.5em;
-
-            @include respond-to( $bp-m ) {
-                font-size: 1.7em;
-            }
+            line-height: 1.4em;
+            text-transform: none;
         }
 
         &.navy-light {
@@ -131,6 +135,14 @@
 
 
 .content-one, .content-two {
+    .accordion {
+        .accordion-handle {
+            &:after {
+                right: 25px;
+            }
+        }
+    }
+
     .accordion-container {
         padding: 12px 0;
     }

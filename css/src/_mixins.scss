@@ -54,7 +54,7 @@
 	}
 }
 
-@mixin padding-side() {
+@mixin padding-side {
 	padding: 0 6%;
 
 	@include respond-to( $bp-m ) {

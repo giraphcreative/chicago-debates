@@ -3,6 +3,26 @@
 .statistics-container {
     @include padding;
 
+    &.pad-no-top {
+        @include padding-no-top;
+    }
+
+    &.pad-no-bottom {
+        @include padding-no-bottom;
+    }
+
+    &.pad-side {
+        @include padding-side;
+    }
+
+    &.grey {
+        background-color: $grey;
+        
+        .circle-bg {
+            stroke: white;
+        }        
+    }
+
     .statistics-header {
         @include respond-to( $bp-m ) {
             display: flex;

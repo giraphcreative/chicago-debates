@@ -2,9 +2,9 @@
 
 $bp-menu: $bp-l;
 
-$bg-menu: darken( $navy, 5% );
-$bg-submenu: darken( $bg-menu, 5% );
-$bg-subsubmenu-hover: darken( $bg-submenu, 5% );
+$bg-menu: lighten( $navy, 5% );
+$bg-submenu: lighten( $bg-menu, 7.5% );
+$bg-subsubmenu-hover: lighten( $bg-submenu, 15% );
 
 header {
 	position: relative;
@@ -145,7 +145,7 @@ header {
 
 				ul.sub-menu {
 					display: none;
-					box-shadow: 5px 5px 20px rgba( black, .2 );
+					box-shadow: 0 0 20px rgba( black, .2 );
 
 					@include respond-to( $bp-menu ) {
 						position: absolute;

@@ -108,9 +108,27 @@ button, input[type=submit] {
 	.gform_footer {
 		input[type=submit], input[type=button], input[type=reset], button {
 			@extend .btn;
-			background-color: $teal;
-			color: white;
-		}
+			background-color: $teal !important;
+			color: $navy !important;
+			opacity: 1 !important;
+			border: 0 !important;
+			padding: 10px 20px !important;
+			font-size: 20px !important;
+			line-height: 24px !important;
+			border-radius: 20px !important;
+			text-transform: uppercase !important;
+			transition: opacity 400ms ease-in-out !important;
+			cursor: pointer !important;
+			text-decoration: none !important;
+			display: inline-block !important;
+			text-align: center !important;
+			-webkit-appearance: none !important;
+		
+			&:hover {
+				text-decoration: none !important;
+				opacity: .8 !important;
+			}
+				}
 	}
 
 }

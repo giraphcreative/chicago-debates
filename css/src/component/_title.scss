@@ -15,6 +15,11 @@
 
     &.yellow {
         background: $yellow;
+        color: $navy;
+
+        h1, h2 {
+            color: $navy;
+        }
 
         .stars {
             background-image: url(../img/stars-navy.svg);
@@ -28,7 +33,7 @@
             background-image: url(../img/stars-navy.svg);
         }
 
-        h2 {
+        h1, h2 {
             color: $navy;
         }
     }
@@ -39,6 +44,17 @@
 
         .title-column {
             flex: 1;
+        }
+    }
+
+    .return-link a {
+        color: rgba( white, .7 );
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: .75em;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 }

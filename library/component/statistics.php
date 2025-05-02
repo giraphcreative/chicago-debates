@@ -2,17 +2,21 @@
 
 $title = get_sub_field( 'title' );
 $intro = get_sub_field( 'intro' );
+$color = get_sub_field( 'color' );
+$padding = get_sub_field( 'padding' );
 
-?>
-<div class="statistics-container">
+if ( have_rows( 'graphs' ) || !empty( $title ) ) : ?>
+<div class="statistics-container <?php print $padding . ' ' . $color; ?>">
+	<?php if ( !empty( $title ) ) : ?>
 	<div class="statistics-header">
 		<div class="statistics-header-title">
 			<h2><?php print $title ?></h2>
-			<div class="stars"></div>
 		</div>
 		<div class="statistics-header-intro"><?php print $intro ?></div>
 	</div>
-	<div class="statistics-graphs">
+	<?php endif; ?>
+	<?php if ( have_rows( 'graphs' ) ) : ?>
+		<div class="statistics-graphs">
 		<?php while ( have_rows( 'graphs' ) ) : the_row(); ?>
 		<div class="graph-column">
 			<div class="graph">
@@ -39,7 +43,10 @@ $intro = get_sub_field( 'intro' );
 		</div>
 		<?php endwhile; ?>
 	</div>
+	<?php endif; ?>
 </div>
+<?php endif; ?>
+<?php if ( have_rows( 'datapoints' ) ) : ?>
 <div class="statistics-datapoints">
 	<?php while ( have_rows( 'datapoints' ) ) : the_row(); ?>
 	<div class="datapoint-column">
@@ -48,4 +55,4 @@ $intro = get_sub_field( 'intro' );
 	</div>
 	<?php endwhile; ?>
 </div>
-
+<?php endif; ?>

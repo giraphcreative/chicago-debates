@@ -1,31 +1,105 @@
 
+.events-list-container {
+    @include padding;
+    position: relative;
+    z-index: 1;
 
-.event-columns {
-    @include respond-to( $bp-m ) {
-        display: flex;
-        padding-top: 30px;
+    .events-list {
+        .entry {
+            @include respond-to( $bp-m ) {
+                display: flex;
+                align-items: center;
+                padding-bottom: 40px;
 
-        .event-description {
-            flex: 1 70%;
-            padding-right: 5%;
-        }
+                .photo {
+                    flex: 0 0 35%;
+                    margin-right: 5%;
+                }
 
-        .event-information {
-            flex: 1 30%;
-        }
-    }
+                .overview {
+                    flex: 0 0 60%;
+                }
+            }
 
-    .event-information {
-        p {
-            font-size: 1.2em;
-            @include font-bold;
+            @include respond-to( $bp-xxl ) {
+                display: flex;
+                align-items: center;
+                padding-bottom: 5%;
 
-            span {
-                @include font;
-                display: block;
-                text-transform: uppercase;
-                font-size: .85em;
-                opacity: .4;
+                .photo {
+                    flex: 0 0 22%;
+                    margin-right: 3%;
+                }
+
+                .overview {
+                    flex: 0 0 75%;
+                }
+            }
+
+            .photo {
+                aspect-ratio: 1 / 1;
+                border-radius: 30px;
+                box-shadow: 0 0 20px rgba( black, .2 );
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                }
+            }
+
+            .overview {
+                .info {
+                    display: flex;
+                    align-items: center;
+                    padding: 15px 0;
+
+                    .date {
+                        flex: 0 0 115px;
+                        border: 4px solid $navy;
+                        border-radius: 50%;
+                        text-align: center;
+                        margin-right: 5%;
+                        aspect-ratio: 1 / 1;
+                        display: flex;
+                        flex-direction: column;
+
+                        .month {
+                            line-height: 24px;
+                            font-size: 24px;
+                            text-transform: uppercase;
+                            margin-top: 12px;
+                        }
+
+                        .day {
+                            font-size: 40px;
+                            line-height: 40px;
+                        }
+
+                        .year {
+                            font-size: 18px;
+                            line-height: 18px;
+                        }
+                    }
+
+                    .name {
+                        a {
+                            color: $navy;
+                        }
+
+                        h3 {
+                            text-transform: none;
+                            line-height: 1.3em;
+                        }
+                    }
+                }
+            }
+
+            .description {
+                padding-bottom: 30px;
+
+                @include respond-to( $bp-m ) {
+                    padding-bottom: 0;
+                }
             }
         }
     }

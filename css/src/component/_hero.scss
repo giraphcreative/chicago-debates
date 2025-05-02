@@ -5,17 +5,8 @@
     z-index: 1;
 
     .hero-header {
-        background: $navy url(../img/bg-hero-speech-large.svg) top right no-repeat;
+        background: $navy top right no-repeat;
         padding: 60px 5% 20px 5%;
-
-        &.speech {
-            background: $navy url(../img/bg-hero-speech-small.svg) top right no-repeat;
-       }
-
-        &.thought {
-            opacity: .4;
-            background: $navy url(../img/bg-hero-thought.svg) top right no-repeat;
-        }
 
         @include respond-to( $bp-s ) {
             padding: 100px 40% 45px 5%;
@@ -23,6 +14,17 @@
 
         @include respond-to( $bp-m ) {
             padding: 100px 40% 45px 5%;
+
+            background-image: url(../img/bg-hero-speech-large.svg);
+
+            &.speech {
+                background-image: url(../img/bg-hero-speech-small.svg);
+        }
+
+            &.thought {
+                opacity: .4;
+                background-image: url(../img/bg-hero-thought.svg);
+            }
         }
 
         @include respond-to( $bp-l ) {

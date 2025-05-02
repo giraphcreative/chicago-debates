@@ -5,38 +5,38 @@ Home/catch-all template
 
 get_header(); 
 
-?>
-	<div class="content-wide" role="main">
+if ( is_search() ) {
+	$title = "<span>Results:</span> '" . get_search_query() . "'</h1>";
+} else {
+	$title = "<h1 class='post-title'>News</h1>";
+}
 
-		<?php
-		if ( is_search() ) {
-			?><h1 class="post-title">Search Results for <span>'<?php print $_REQUEST["s"]; ?>'</span></h1><?php
-		} else {
-			?><h1 class="post-title">Our Blog</h1><?php
-		}
+if ( have_posts() ) : ?>
 
-		if ( have_posts() ) : 
+<div class="title navy">
+	<div class="title-column">
+		<h1><?php print $title ?></h1>
+		<div class="stars"></div>
+	</div>
+</div>
 
-			// Start the Loop.
-			while ( have_posts() ) : the_post(); 
-				?>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<?php the_excerpt(); ?>
-				<p class="quiet">Posted by <?php print get_the_author_link() ?> in <?php print get_the_category_list( ', ' ) ?>.</p>
-				<hr />
-				<?php
-			endwhile;
+<div class="posts-container <?php print $theme; ?>">
+	<div class="posts-list">
+		<?php while ( have_posts() ) : the_post(); ?>
+		<div class="entry">
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+			<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+		</div><?php
+		endwhile; ?>
+	</div>
+</div>
+	
+<?php
+else : ?>
+	<p>There are currently no posts to list here.</p>
+	<?php 
+endif;
 
-		else :
+paginate();
 
-			print "<p>There are currently no posts to list here.</p>";
-
-		endif;
-		?>
-		
-		<?php paginate(); ?>
-
-	</div><!-- #primary -->
-
-
-<?php get_footer(); ?>
+get_footer();
