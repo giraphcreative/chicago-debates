@@ -34,9 +34,9 @@ get_header();
 
 	</div><!-- #primary -->
 
-	<?php paginate(); ?>
-
 <?php
+pagination();
+
 
 get_footer();
 

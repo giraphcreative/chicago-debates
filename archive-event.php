@@ -46,8 +46,7 @@ get_header();
 	<?php endif; ?>
 </div>
 <?php 
-
-paginate();
+pagination();
 
 get_footer();
 

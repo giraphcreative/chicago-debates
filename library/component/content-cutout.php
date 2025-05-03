@@ -7,10 +7,18 @@ $background = get_sub_field( 'background' );
 $accent = get_sub_field( 'accent' );
 $stars = get_sub_field( 'stars' );
 
+global $has_h1;
 ?>
 <div class="content-cutout-container <?php print $background . ' ' . $accent; ?>">
     <div class="content-cutout">
-        <?php if ( !empty( $title ) ) : ?><h2><?php print $title ?></h2><?php endif; ?>
+        <?php if ( !empty( $title ) ) : ?>
+            <?php if ( !$has_h1 ) { 
+            $has_h1 = true; ?>
+                <h1><?php print $title ?></h1>
+            <?php } else { ?>
+                <h2><?php print $title ?></h2>
+            <?php } ?>
+        <?php endif; ?>
         <?php if ( $stars ) : ?><div class="stars"></div><?php endif; ?>
         <?php print $content; ?>
     </div>

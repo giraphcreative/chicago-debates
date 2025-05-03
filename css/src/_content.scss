@@ -212,10 +212,6 @@
 		.column {
 			flex: 1 1 45%;
 			margin-right: 5%;
-
-			&.one {
-				
-			}
 		}
 	}
 }
@@ -234,3 +230,34 @@
 	height: 90vh;
 }
 
+
+.pagination {
+	padding: 10px 50px 30px;
+	text-align: center;
+	display: block;
+	position: relative;
+	z-index: 2;
+
+	ul {
+		li {
+			display: inline-block;
+
+			.page-numbers {
+				padding: 10px 10px;
+				text-decoration: none;
+				color: white;
+				background: darken( $grey, 20% );
+				display: inline-block;
+				margin: 0 4px;
+
+				&.current {
+					background: $navy;
+				}
+
+				&:hover {
+					border: 0;
+				}
+			}
+		}
+	}
+}

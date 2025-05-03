@@ -22,7 +22,7 @@ get_header();
 </div>
 <?php 
 
-paginate();
+pagination();
 
 get_footer();
 

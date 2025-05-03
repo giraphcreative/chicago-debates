@@ -6,6 +6,8 @@ $content = get_sub_field( 'content' );
 $theme = get_sub_field( 'theme' );
 $cutout = get_sub_field( 'cutout' );
 
+global $has_h1;
+$has_h1 = true;
 ?>
 <div class="hero-container">
     <div class="hero-header <?php print $theme ?>">

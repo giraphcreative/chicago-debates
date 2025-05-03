@@ -57,6 +57,10 @@
             background-image: url(../img/stars-yellow.svg);
         }
 
+        h1, h2 {
+            color: $navy;
+        }
+
         @include respond-to( $bp-m ) {
             padding-right: 50%;
         }

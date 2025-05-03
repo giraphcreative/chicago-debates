@@ -10,6 +10,10 @@ jQuery(document).ready(function($) {
 		var the_link = $( this );
 		var the_link_href = the_link.attr( 'href' );
 
+		if ( $('body').hasClass( 'page-id-1460' ) ) {
+			window.open( the_link_href, "_blank" ); 
+		}
+
 		// prompt the user and if they confirm the prompt, proceed to the third party site.
 		if ( the_link.hasClass( 'bypass' ) ||
 			the_link_href.match( /chicago.jpederson.io/i ) || 

@@ -32,11 +32,11 @@ if ( have_posts() ) : ?>
 </div>
 	
 <?php
+pagination();
 else : ?>
 	<p>There are currently no posts to list here.</p>
 	<?php 
 endif;
 
-paginate();
 
 get_footer();

@@ -4,6 +4,9 @@
 // get the components
 function get_components() {
 
+    global $has_h1;
+    $has_h1 = false;
+
     // if we have components for this page
     if( have_rows('components') ):
         

@@ -3,6 +3,8 @@
 .bubbles-container {
     padding: 3% 5%;
     background: $grey;
+    position: relative;
+    z-index: 3;
 
     @include respond-to( $bp-s ) {
         display: flex;
