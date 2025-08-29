@@ -19,6 +19,7 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
     </div>
     <div class="events-list">
         <?php
+        $today = date('Y-m-d');
         
         $event_query = new WP_Query( array(
             'post_type' => 'event',
@@ -32,6 +33,13 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
             'meta_key'          => 'start',
             'orderby'           => 'meta_value',
             'order'             => 'ASC',
+            'meta_query'        => array(
+                array(
+                    'key' => 'start',
+                    'value' => $today,
+                    'compare' => '>'
+                ),
+            ),
             'posts_per_page' => 4
         ) );
 
