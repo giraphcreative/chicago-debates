@@ -16,7 +16,7 @@ $admin_email = get_option( 'admin_email' );
 <img src="<?php bloginfo( 'template_url' ); ?>/img/skyline.svg" class="skyline" />
 <footer class="footer">
 	<div class="column logos">
-		<img src="<?php bloginfo( 'template_url' ) ?>/img/logo-vertical.svg" />
+		<img src="<?php bloginfo( 'template_url' ) ?>/img/logo-footer.svg" />
 	</div>
 	<div class="column social">
 		<?php
