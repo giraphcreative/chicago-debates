@@ -7,13 +7,14 @@ function event_adjust_queries($query){
         $query->set( 'meta_key', 'start');
         $query->set( 'orderby', 'meta_value' );
         $query->set( 'order', 'ASC' );
-        $query->set( 'meta_query', array(
+        
+        /*$query->set( 'meta_query', array(
             array(
                 'key' => 'start',
                 'value' => $today,
                 'compare' => '>'
             ),
-        ));
+        ));*/
     }
 }
 add_action( 'pre_get_posts', 'event_adjust_queries' );
