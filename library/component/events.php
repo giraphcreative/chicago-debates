@@ -33,7 +33,6 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
             'meta_key'          => 'start',
             'orderby'           => 'meta_value',
             'order'             => 'ASC',
-            /*
             'meta_query'        => array(
                 array(
                     'key' => 'start',
@@ -41,7 +40,6 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
                     'compare' => '>'
                 ),
             ),
-            */
             'posts_per_page' => 4
         ) );
 
