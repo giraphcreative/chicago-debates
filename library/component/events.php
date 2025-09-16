@@ -37,7 +37,7 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
                 array(
                     'key' => 'start',
                     'value' => $today,
-                    'compare' => '>'
+                    'compare' => '>='
                 ),
             ),
             'posts_per_page' => 4

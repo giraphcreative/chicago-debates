@@ -12,7 +12,7 @@ function event_adjust_queries($query){
             array(
                 'key' => 'start',
                 'value' => $today,
-                'compare' => '>'
+                'compare' => '>='
             ),
         ));
     }
