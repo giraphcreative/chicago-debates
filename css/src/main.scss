@@ -1,35 +1,51 @@
-
-
 // set colors
-$teal: #50b6a6;
-$teal-dark: #215b82;
-$navy: #37354a;
-$yellow: #fdb913;
-$grey: #dbe3e1;
-
-
+$teal: #66b3a8;
+$blue: #316681;
+$teal-dark: $blue;
+$navy: #254266;
+$lake: $navy;
+$yellow: #f4b934;
+$golden: $yellow;
+$coral: #de6b58;
+$grey: #d7e0de;
+$midnight: #37364b;
 // breakpoints
 $bp-s: 600px;
 $bp-m: 768px;
 $bp-l: 1024px;
 $bp-xl: 1150px;
 $bp-xxl: 1450px;
-
-
 // import all the things
-@import "mixins", "fonts", "reset", "button", "base", "grid", "form";
-
-
+@import "mixins",
+"fonts",
+"reset",
+"button",
+"base",
+"grid",
+"form";
 // import layout components
-@import "header", "showcase", "content", "events", "sidebar", "footer";
-
-
+@import "header",
+"showcase",
+"content",
+"events",
+"sidebar",
+"footer";
 // import components
-@import "component/hero", "component/bubbles", "component/content", "component/cta_buttons", "component/quote", 
-    "component/events", "component/posts", "component/mission-vision", "component/content-cutout", "component/content-bubble", "component/statistics", 
-    "component/report", "component/title", "component/accordions", "component/people", "component/video";
-
-
+@import "component/hero",
+"component/bubbles",
+"component/content",
+"component/cta_buttons",
+"component/quote",
+"component/events",
+"component/posts",
+"component/mission-vision",
+"component/content-cutout",
+"component/content-bubble",
+"component/statistics",
+"component/report",
+"component/title",
+"component/accordions",
+"component/people",
+"component/video";
 // import lightbox styles
 @import "magnific";
-

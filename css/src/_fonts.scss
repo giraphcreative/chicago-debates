@@ -1,37 +1,40 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-
+@import url("https://use.typekit.net/yrz6efe.css");
 @mixin font-thin {
-	font-family: "Figtree", sans-serif;
-	font-weight: 300;
+    font-family: "Figtree", sans-serif;
+    font-weight: 300;
 }
 
 @mixin font-thin-italic {
-	font-family: "Figtree", sans-serif;
-	font-weight: 300;
-	font-style: italic;
+    font-family: "Figtree", sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 @mixin font {
-	font-family: "Figtree", sans-serif;
-	font-weight: 400;
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
 }
 
 @mixin font-italic {
-	font-family: "Figtree", sans-serif;
-	font-weight: 400;
-	font-style: italic;
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 @mixin font-bold {
-	font-family: "Figtree", sans-serif;
-	font-weight: 700;
+    font-family: "Figtree", sans-serif;
+    font-weight: 700;
 }
 
 @mixin font-bold-italic {
-	font-family: "Figtree", sans-serif;
-	font-weight: 700;
-	font-style: italic;
+    font-family: "Figtree", sans-serif;
+    font-weight: 700;
+    font-style: italic;
 }
 
+@mixin font-script {
+    font-family: "rollerscript-smooth", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

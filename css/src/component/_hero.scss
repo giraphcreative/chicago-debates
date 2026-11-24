@@ -1,125 +1,113 @@
-
-
 .hero-container {
     position: relative;
     z-index: 1;
-
-    .hero-header {
-        background: $navy top right no-repeat;
-        padding: 60px 5% 20px 5%;
-
-        @include respond-to( $bp-s ) {
-            padding: 100px 40% 45px 5%;
+    &.no-content {
+        .hero-header {
+            height: 100%;
+            background: $navy url(../img/bg-gradient.svg) top right repeat-y;
+            background-size: contain;
         }
-
-        @include respond-to( $bp-m ) {
-            padding: 100px 40% 45px 5%;
-
-            background-image: url(../img/bg-hero-speech-large.svg);
-
-            &.speech {
-                background-image: url(../img/bg-hero-speech-small.svg);
-        }
-
-            &.thought {
-                background-image: url(../img/bg-hero-thought.svg);
+        .hero-cutout {
+            display: none;
+            @include respond-to( $bp-m ) {
+                display: block;
             }
         }
-
-        @include respond-to( $bp-l ) {
-            padding: 150px 40% 45px 5%;
+    }
+    .hero-header {
+        background: $navy url(../img/bg-gradient.svg) top right no-repeat;
+        background-size: cover;
+        padding: 60px 5% 20px 5%;
+        @include respond-to( $bp-s) {
+            padding: 100px 40% 45px 5%;
         }
-
-        @include respond-to( $bp-xl ) {
-            padding: 200px 40% 65px 5%;
+        @include respond-to( $bp-m) {
+            padding: 100px 40% 45px 5%;
         }
-
+        @include respond-to( $bp-l) {
+            padding: 100px 40% 45px 5%;
+        }
+        @include respond-to( $bp-xl) {
+            padding: 100px 40% 65px 5%;
+        }
         h1 {
-            @include font-bold;
-            color: white;
-            font-size: 2.6em;
+            @include font-script;
+            color: $golden;
+            font-size: 3.2em;
             line-height: 1em;
-            text-transform: uppercase;
-
+            text-transform: inherit;
             span {
                 opacity: .7;
             }
-            
-            @include respond-to( $bp-m ) {
-                font-size: 3.8em;
+            @include respond-to( $bp-m) {
+                font-size: 4em;
             }
-            
-            @include respond-to( $bp-l ) {
-                font-size: 5em;
+            @include respond-to( $bp-l) {
+                font-size: 5.5em;
             }
-            
-            @include respond-to( $bp-xxl ) {
-                font-size: 6.5em;
+            @include respond-to( $bp-xxl) {
+                font-size: 7.5em;
             }
         }
-        
         h2 {
-            font-size: 2em;
+            @include font-bold;
+            font-size: 1.6em;
             line-height: 1em;
             text-transform: uppercase;
             color: white;
-        
-            @include respond-to( $bp-s ) {
-                font-size: 2.1em;
+            @include respond-to( $bp-s) {
+                font-size: 1.8em;
             }
-            
-            @include respond-to( $bp-m ) {
-                font-size: 2.2em;
+            @include respond-to( $bp-m) {
+                font-size: 2em;
             }
-            
-            @include respond-to( $bp-l ) {
-                font-size: 2.8em;
+            @include respond-to( $bp-l) {
+                font-size: 2.6em;
             }
-            
-            @include respond-to( $bp-xxl ) {
-                font-size: 3.5em;
+            @include respond-to( $bp-xxl) {
+                font-size: 3.2em;
             }
         }
-        
         h3 {
             font-size: 1.6em;
             line-height: 1em;
             text-transform: uppercase;
-        
-            @include respond-to( $bp-m ) {
+            @include respond-to( $bp-m) {
                 font-size: 1.8em;
             }
-            
-            @include respond-to( $bp-l ) {
+            @include respond-to( $bp-l) {
                 font-size: 2.2em;
             }
-            
-            @include respond-to( $bp-xxl ) {
+            @include respond-to( $bp-xxl) {
                 font-size: 3.5em;
             }
         }
+        .line {
+            @include respond-to( $bp-xxl) {
+                margin-top: -20px;
+            }
+        }
     }
-
     .hero-content {
         @include padding;
-
-        @include respond-to( $bp-s ) {
-            padding: 30px 40% 30px 5%;
+        @include respond-to( $bp-s) {
+            padding: 30px 40% 30% 5%;
         }
-
-        @include respond-to( $bp-m ) {
-            padding: 30px 40% 30px 5%;
+        @include respond-to( $bp-m) {
+            padding: 30px 40% 20% 5%;
+        }
+        @include respond-to( $bp-xl) {
+            padding: 30px 40% 10% 5%;
+            font-size: 1.2em;
         }
     }
-
     .hero-cutout {
         min-height: 300px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom right;
         margin-top: -50px;
-
-        @include respond-to( $bp-s ) {
+        @include respond-to( $bp-s) {
             background-position: bottom right;
             position: absolute;
             right: 0;
@@ -129,6 +117,4 @@
             margin-top: 0;
         }
     }
-
 }
-

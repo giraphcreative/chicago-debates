@@ -1,54 +1,48 @@
-
-
 .buttons {
-	padding: 15px 0;
+    padding: 15px 0;
 }
-
 
 // general button styles
 .btn {
-	@include font;
-	opacity: 1;
-	border: 0;
-	padding: 10px 20px;
-	font-size: 20px;
-	line-height: 24px;
-	border-radius: 20px;
-	text-transform: uppercase;
-	transition: opacity 400ms ease-in-out;
-	cursor: pointer;
-	text-decoration: none;
-	display: inline-block;
-	text-align: center;
-	background-color: $yellow;
-	color: $navy;
-	-webkit-appearance: none;
-
-	&:hover {
-		text-decoration: none;
-		opacity: .8;
-	}
-
-	&.navy {
-		background-color: $navy;
-		color: white;
-	}
-
-	&.teal {
-		background-color: $teal;
-		color: white;
-	}
-
-	&.yellow {
-		background-color: $yellow;
-		color: $navy;
-	}
-
-	&.block {
-		display: block;
-		padding: 15px;
-		margin-bottom: 5px;
-		border-radius: 30px;
-	}
+    @include font-bold;
+    opacity: 1;
+    border: 0;
+    padding: 8px 20px;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: opacity 400ms ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background-color: $yellow;
+    color: $navy;
+    -webkit-appearance: none;
+    @include respond-to( $bp-m) {
+        padding: 10px 35px;
+    }
+    &:hover {
+        text-decoration: none;
+        opacity: .8;
+    }
+    &.navy {
+        background-color: $navy;
+        color: white;
+    }
+    &.teal {
+        background-color: $teal;
+        color: white;
+    }
+    &.yellow {
+        background-color: $yellow;
+        color: $navy;
+    }
+    &.block {
+        display: block;
+        padding: 15px;
+        margin-bottom: 5px;
+        border-radius: 30px;
+    }
 }
-

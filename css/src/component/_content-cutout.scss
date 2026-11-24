@@ -1,76 +1,60 @@
-
-
 .content-cutout-container {
     background: white;
     position: relative;
-    
     &:before {
         position: absolute;
         bottom: 0;
         left: 0;
-
         content: "";
         background-size: contain;
         aspect-ratio: 1 / 1;
         width: 100%;
         max-width: 500px;
-
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-m) {
             position: absolute;
             right: 0;
             bottom: 0;
-            top: 30px;
+            top: auto;
             width: 50%;
             left: auto;
             max-width: 50%;
         }
-
-        @include respond-to( $bp-l ) {
+        @include respond-to( $bp-l) {
             max-width: 40%;
         }
     }
-    
-    &.star-teal:before {
-        background: url(../img/bg-chicago-star-full.svg) center center no-repeat;
-    }
-    
-    &.star-yellow:before {
-        background: url(../img/bg-chicago-star-full-yellow.svg) center center no-repeat;
-    }
-    
     &.bubble-teal:before {
         background: url(../img/bg-bubble-teal.svg) center center no-repeat;
     }
-    
     &.bubble-yellow:before {
         background: url(../img/bg-bubble-yellow.svg) center center no-repeat;
     }
-
+    &.bubble-coral:before {
+        background: url(../img/bg-bubble-coral.svg) center center no-repeat;
+    }
     &.grey {
         background: $grey;
     }
-    
     .content-cutout {
         @include padding;
-
-        .stars {
-            background-image: url(../img/stars-yellow.svg);
-        }
-
-        h1, h2 {
+        display: grid;
+        place-items: center;
+        h1,
+        h2 {
+            @include font-bold;
             color: $navy;
         }
-
-        @include respond-to( $bp-m ) {
+        .line {
+            margin: 15px 0;
+        }
+        @include respond-to( $bp-m) {
             padding-right: 50%;
         }
-
-        @include respond-to( $bp-l ) {
+        @include respond-to( $bp-l) {
             padding-right: 40%;
             min-height: 700px;
         }
     }
-
     .cutout {
         aspect-ratio: 3 / 4;
         background-position: bottom right;
@@ -79,8 +63,7 @@
         position: relative;
         max-width: 400px;
         margin-top: -60px;
-
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-m) {
             aspect-ratio: inherit;
             position: absolute;
             right: 0;
@@ -91,10 +74,8 @@
             max-width: inherit;
             background-position: bottom center;
         }
-
-        @include respond-to( $bp-l ) {
+        @include respond-to( $bp-l) {
             width: 40%;
         }
     }
 }
-

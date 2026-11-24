@@ -16,7 +16,7 @@ global $has_h1;
         <?php } else { ?>
             <h2><?php print $title ?></h2>
         <?php } ?>
-        <?php if ( $stars ) : ?><div class="stars"></div><?php endif; ?>
+        <?php if ( $stars ) : ?><div class="line white"></div><?php endif; ?>
     </div>
     <?php if ( !empty( $content ) ) : ?>
     <div class="title-column">

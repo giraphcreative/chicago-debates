@@ -1,22 +1,17 @@
-
-
 .accordion {
     position: relative;
     z-index: 1;
-
     .accordion-handle {
         padding: 25px 12% 25px 6%;
         background: $navy;
-        border-bottom: 1px solid rgba( white, .1 );
+        border-bottom: 1px solid rgba( white, .1);
         color: white;
         cursor: pointer;
         position: relative;
         transition: opacity 400ms ease-in-out;
-
         &:hover {
             opacity: .9;
         }
-
         &:after {
             content: '';
             position: absolute;
@@ -27,71 +22,60 @@
             background-size: contain;
             height: 30px;
             width: 30px;
-            transform: rotate( 0deg );
+            transform: rotate( 180deg);
             transition: transform 200ms ease-in-out;
         }
-
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-m) {
             padding: 30px 5%;
         }
-
         h3 {
-            font-size: 1.5em;
+            @include font-bold;
+            font-size: 1.4em;
             line-height: 1.4em;
-            text-transform: none;
+            text-transform: uppercase;
         }
-
         &.navy-light {
             background: rgba( $navy, .8);
         }
-
         &.navy-lighter {
             background: rgba( $navy, .6);
         }
-
         &.navy-lightest {
             background: rgba( $navy, .4);
             color: $navy;
         }
-
         &.teal {
             background: $teal;
         }
-
         &.teal-light {
             background: rgba( $teal, .8);
         }
-
         &.teal-lighter {
             background: rgba( $teal, .6);
             color: $navy;
         }
-
         &.yellow {
             background: $yellow;
             color: $navy;
         }
-
         &.yellow-light {
-            background: rgba( $yellow, .8 );
+            background: rgba( $yellow, .8);
             color: $navy;
         }
+        &.midnight {
+            background: $midnight;
+        }
     }
-
     .accordion-content {
         display: none;
         position: relative;
-        background: url(../img/bg-chicago-star-partial-faded.svg) top right no-repeat;
-        background-size: contain;
-
+        @extend .content-style;
         .accordion-content-inner {
             padding: 3% 6%;
-
-            @include respond-to( $bp-m ) {
+            @include respond-to( $bp-m) {
                 padding: 3% 5%;
             }
         }
-
         .accordion-cutout {
             aspect-ratio: 3 / 4;
             background-position: bottom right;
@@ -101,24 +85,19 @@
             margin: -80px 0 0 auto;
         }
     }
-
     &.open {
         .accordion-handle:after {
-            transform: rotate( 180deg );
+            transform: rotate( 0deg);
         }
-
         .accordion-content {
             display: block;
-
             &.has-cutout {
-                @include respond-to( $bp-m ) {
+                @include respond-to( $bp-m) {
                     display: flex;
-
                     .accordion-content-inner {
                         flex: 0 0 65%;
                         padding-right: 0;
                     }
-
                     .accordion-cutout {
                         flex: 0 0 35%;
                         aspect-ratio: inherit;
@@ -132,9 +111,8 @@
     }
 }
 
-
-
-.content-one, .content-two {
+.content-one,
+.content-two {
     .accordion {
         .accordion-handle {
             &:after {
@@ -142,11 +120,9 @@
             }
         }
     }
-
     .accordion-container {
         padding: 12px 0;
     }
-
     .accordion .accordion-content {
         background: $grey;
     }

@@ -12,14 +12,14 @@ $content_bottom = get_sub_field( 'content-bottom' );
     <div class="mission-vision-inner">
         <div class="mission <?php print $color ?>">
             <?php if ( !empty( $title_top ) ) : ?><h2><?php print $title_top ?></h2><?php endif; ?>
-            <div class="stars"></div>
+            <div class="line white"></div>
             <div class="content-top">
                 <?php print $content_top ?>
             </div>
         </div>
         <div class="vision">
             <?php if ( !empty( $title_bottom ) ) : ?><h2><?php print $title_bottom ?></h2><?php endif; ?>
-            <div class="stars"></div>
+            <div class="line teal"></div>
             <div class="content-top">
                 <?php print $content_bottom ?>
             </div>

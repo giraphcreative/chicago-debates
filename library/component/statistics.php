@@ -11,6 +11,7 @@ if ( have_rows( 'graphs' ) || !empty( $title ) ) : ?>
 	<div class="statistics-header">
 		<div class="statistics-header-title">
 			<h2><?php print $title ?></h2>
+			<div class="line coral"></div>
 		</div>
 		<div class="statistics-header-intro"><?php print $intro ?></div>
 	</div>

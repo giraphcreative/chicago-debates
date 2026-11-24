@@ -19,6 +19,7 @@ if ( $posts_query->have_posts() ) : ?>
         <div class="entry">
             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
             <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+            <p class="buttons"><a href="<?php the_permalink(); ?>" class="btn navy">Read More</a></p>
         </div><?php
         endwhile; ?>
     </div>

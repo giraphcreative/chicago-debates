@@ -1,68 +1,80 @@
-
-
 .bubbles-container {
     padding: 3% 5%;
     background: $grey;
     position: relative;
     z-index: 5;
-
-    @include respond-to( $bp-s ) {
+    @include respond-to( $bp-m) {
         display: flex;
         flex-wrap: wrap;
-        margin-right: -3%;
-
-        .bubble {
-            flex: 1 1 0;
-            margin-right: 3%;
-        }
+        align-items: center;
+        padding-top: 10%;
     }
-
-    @include respond-to( $bp-xxl ) {
-        display: flex;
+    @include respond-to( $bp-xl) {
         flex-wrap: nowrap;
-        margin-right: -2%;
-
-        .bubble {
-            margin-right: 2%;
-        }
+        padding: 0 5%;
+        height: 350px;
     }
-
+    @include respond-to( $bp-xxl) {
+        margin-right: -3.3333%;
+    }
     .bubble {
-        position: relative;
-        background: $navy;
         border-radius: 30px;
         margin-bottom: 35px;
+        margin-top: -40%;
         color: white;
-        padding: 25px 30px;
-
-        @include respond-to( $bp-m ) {
-            padding: 100px 40px 45px;
+        padding: 15% 15% 40% 15%;
+        background: url(../img/bubble-blue.svg) center center no-repeat;
+        background-size: contain;
+        aspect-ratio: 121 / 150;
+        display: grid;
+        place-items: center;
+        &:nth-child(2) {
+            background-image: url(../img/bubble-teal.svg);
         }
-
-        &:before {
-            content: '';
-            background: url(../img/carat.svg) bottom right no-repeat;
-            background-size: contain;
-            position: absolute;
-            bottom: -30px;
-            height: 30px;
-            width: 100px;
-            right: 20px;
+        &:nth-child(3) {
+            background-image: url(../img/bubble-coral.svg);
+            margin-bottom: -30%;
+            @include respond-to( $bp-m) {
+                margin-bottom: -15%;
+            }
+            @include respond-to( $bp-xl) {
+                margin-bottom: 0;
+            }
         }
-
+        @include respond-to( $bp-m) {
+            flex: 0 0 50%;
+            padding: 5% 5% 18% 5%;
+            margin-top: -20%;
+        }
+        @include respond-to( $bp-xl) {
+            flex: 0 0 33.3333%;
+            padding: 5% 5% 12% 5%;
+            margin-top: -1%;
+        }
+        @include respond-to( $bp-xxl) {
+            flex: 0 0 30%;
+            margin-right: 3.3333%;
+        }
         h3 {
-            font-size: 2.5em;
+            font-size: 2em;
+            @include font-bold;
+            @include respond-to( $bp-m) {
+                font-size: 2em;
+            }
+            @include respond-to( $bp-l) {
+                font-size: 1.8em;
+            }
         }
-
         p {
             padding: 8px 0;
+            line-height: 1.2em;
+            @include respond-to( $bp-xxl) {
+                font-size: 1.2em;
+                line-height: 1.2em;
+            }
         }
-
         .btn {
             margin-top: 10px;
-            padding: 15px 30px;
-            font-size: 1.3em;
         }
     }
 }
-

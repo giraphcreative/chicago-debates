@@ -7,6 +7,11 @@
     position: relative;
     z-index: 1;
 
+    &.gradient {
+        background: url(../img/bg-gradient.svg) center center repeat-y;
+        background-size: contain;
+    }
+
     @include respond-to( $bp-m ) {
         display: flex;
 
@@ -35,7 +40,6 @@
     .intro {
         h2 {
             position: relative;
-            margin-bottom: 90px;
             color: white;
 
             span {
@@ -43,18 +47,7 @@
                 @include font-bold;
             }
 
-            &:after {
-                background: url(../img/stars.svg) center center no-repeat;
-                aspect-ratio: 100 / 30;
-                position: absolute;
-                content: '';
-                bottom: -95px;
-                left: 0;
-                width: 300px;
-            }
-
             @include respond-to( $bp-l ) {
-                margin-bottom: 120px;
 
                 &:after {
                     bottom: -130px;
@@ -74,62 +67,77 @@
             flex-flow: column;
         }
 
+        
         .event {
             flex: 1;
             display: flex;
             align-items: center;
             margin-bottom: 20px;
 
-            .date {
-                flex: 0 0 100px;
-                border: 2px solid $yellow;
-                aspect-ratio: 1 / 1;
-                border-radius: 50%;
-                text-align: center;
-                margin-right: 5%;
+            .event-photo {
+                display:none;
+            }
 
-                .month {
-                    line-height: 24px;
-                    font-size: 24px;
-                    text-transform: uppercase;
-                    margin-top: 12px;
-                }
+            .event-info {
+                display: flex;
+                align-items: center;
 
-                .day {
-                    font-size: 50px;
-                    line-height: 50px;
-                }
-
-                @include respond-to( $bp-m ) {
-                    padding: 10px;
-                    flex-basis: 130px;
+                .date {
+                    flex: 0 0 100px;
+                    border: 2px solid $yellow;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin-right: 5%;
 
                     .month {
-                        line-height: 30px;
-                        font-size: 30px;
-                        margin-top: 15px;
+                        line-height: 24px;
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        margin-top: 12px;
                     }
 
                     .day {
                         font-size: 50px;
                         line-height: 50px;
                     }
+
+                    @include respond-to( $bp-m ) {
+                        padding: 10px;
+                        flex-basis: 130px;
+
+                        .month {
+                            line-height: 30px;
+                            font-size: 30px;
+                            margin-top: 15px;
+                        }
+
+                        .day {
+                            font-size: 50px;
+                            line-height: 50px;
+                        }
+                    }
                 }
-            }
 
-            .event-name {
-                flex: 1;
+                .event-name {
+                    flex: 1;
 
-                a {
-                    color: white;
+                    a {
+                        color: white;
+                        line-height: 1.5em;
 
-                    &:hover {
-                        text-decoration: none;
-                        border-bottom: 2px dotted rgba( white, .4 );
+                        &:hover {
+                            text-decoration: none;
+                            border-bottom: 2px dotted rgba( white, .4 );
+                        }
                     }
                 }
             }
         }
+    }
+
+    &.card {
+        
     }
 }
 

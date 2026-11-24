@@ -9,7 +9,7 @@ $link = get_sub_field( 'link' );
 <div class="report">
     <div class="intro">
         <h2><?php print $title ?></h2>
-        <div class="stars"></div>
+        <div class="line golden"></div>
         <?php print $content; ?>
     </div>
     <div class="image">

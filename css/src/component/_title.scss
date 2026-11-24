@@ -38,12 +38,22 @@
         }
     }
 
+    &.gradient {
+        background: url(../img/bg-gradient.svg) center center repeat-y;
+        background-size: contain;
+    }
+
     @include respond-to( $bp-m ) {
         display: flex;
         align-items: center;
 
         .title-column {
-            flex: 1;
+            flex: 1 1 50%;
+            
+            &:first-child {
+                flex: 1 1 45%;
+                padding-right: 5%;
+            }
         }
     }
 

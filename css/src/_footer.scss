@@ -1,100 +1,91 @@
-
-.skyline {
-	position: relative;
-	z-index: 1;
-	margin-top: 20px;
+.footer-accent {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 9 / 1;
+    background: url(../img/footer-accent.svg) center center no-repeat;
+    background-size: cover;
 }
 
 footer {
-	@include clearfix;
-	position: relative;
-	color: black;
-	line-height: 1.3em;
-	padding: 10% 6%;
-	
-	@include respond-to( $bp-m ) {
-		padding: 3% 5%;
-	}
-
-	a {
-		color: black;
-		text-decoration: none;
-		border-bottom: 1px dotted rgba( black, .5 );
-		transition: all 400ms ease-in-out;
-
-		&:hover {
-			color: $teal;
-			border-bottom: 1px dotted black;
-			text-decoration: none;
-		}
-	}
-
-	.copyright {
-		color: rgba( black, .6 );
-	}
-
-	@include respond-to( $bp-m ) {
-		display: flex;
-		align-items: center;
-
-		.column {
-			flex: 1;
-
-			&:first-child {
-				flex: 0 0 28%;
-				margin-right: 5%;
-				text-align: left;
-			}
-
-			&.social {
-				flex: 0 0 8%;
-				padding: 0 1%;
-			}
-		}
-	}
-
-	.column {
-		padding: 10px 0;
-
-		&.logos {
-			text-align: center;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&.address {
-			font-size: .9em;
-		}
-
-		&.map {
-			border-radius: 15px;
-			overflow: hidden;
-
-			iframe {
-				display: block;
-				height: 200px;
-			}
-		}
-
-		&.social {
-			text-align: center;
-
-			a {
-				border: 0;
-				opacity: .7;
-				margin: 0 3px;
-
-				&:hover {
-					opacity: 1;
-				}
-			}
-
-			img {
-				max-width: 50px;
-			}
-		}
-	}
+    @include clearfix;
+    position: relative;
+    color: black;
+    line-height: 1.3em;
+    padding: 10% 6%;
+    @include respond-to( $bp-m) {
+        padding: 3% 5%;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px dotted rgba( black, .5);
+        transition: all 400ms ease-in-out;
+        &:hover {
+            color: $teal;
+            border-bottom: 1px dotted black;
+            text-decoration: none;
+        }
+    }
+    .copyright {
+        color: rgba( black, .6);
+    }
+    @include respond-to( $bp-m) {
+        display: flex;
+        align-items: center;
+        .column {
+            flex: 1;
+            &:first-child {
+                flex: 0 0 28%;
+                margin-right: 5%;
+                text-align: left;
+            }
+            &.social {
+                flex: 0 0 8%;
+                padding: 0 1%;
+            }
+        }
+    }
+    .column {
+        padding: 10px 0;
+        &.logos {
+            text-align: center;
+            img {
+                width: 100%;
+            }
+        }
+        &.address {
+            font-size: .9em;
+        }
+        &.map {
+            border-radius: 15px;
+            overflow: hidden;
+            iframe {
+                display: block;
+                height: 200px;
+            }
+        }
+        &.social {
+            text-align: center;
+            a {
+                border: 0;
+                opacity: .7;
+                margin: 0 3px;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            img {
+                max-width: 50px;
+            }
+        }
+        &.seal {
+            padding: 10px 0;
+            img {
+                max-width: 220px;
+            }
+            @include respond-to( $bp-m) {
+                padding: 0 20px;
+            }
+        }
+    }
 }
-

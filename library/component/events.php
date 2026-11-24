@@ -4,18 +4,20 @@ $title = get_sub_field( 'title' );
 $intro = get_sub_field( 'intro' );
 $category = get_sub_field( 'category' );
 $more_link = get_sub_field( 'more_link' );
+$style = get_sub_field( 'style' );
 
 
 if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
-<div class="events-container">
+<div class="events-container <?php print $style; ?>">
     <div class="intro">
-        <h2><?php print $title ?></h2>
-        <?php 
-        print $intro;
-        if ( !empty( $more_link ) ) {
-            ?><p class="more-events"><a href="<?php print $more_link ?>" class="btn">View Events</a></p><?php
-        }
-        ?>
+        <div class="events-title">
+            <h2><?php print $title ?></h2>
+            <div class="line coral"></div>
+        </div>
+        <div class="event-intro">
+            <?php print $intro; ?>
+            <?php if ( !empty( $more_link ) ) : ?><p class="more-events"><a href="<?php print $more_link ?>" class="btn">View Events</a></p><?php endif; ?>
+        </div>
     </div>
     <div class="events-list">
         <?php
@@ -49,6 +51,10 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
                 $start_ts = strtotime( $start );
                 ?>
         <div class="event">
+            <div class="event-photo">
+            <img src="<?php print get_the_post_thumbnail_url(); ?>" />  
+        </div>
+        <div class="event-info">
             <div class="date">
                 <div class="month"><?php print date( 'M', $start_ts ); ?></div>
                 <div class="day"><?php print date( 'j', $start_ts ); ?></div>
@@ -56,12 +62,11 @@ if ( !empty( $category ) && !empty( $title ) && !empty( $intro ) ) : ?>
             <div class="event-name">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </div>
+            </div>
         </div>
                 <?php
             endwhile;
         endif;
-
-
         ?>
     </div>
 </div>
